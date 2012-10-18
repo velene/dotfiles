@@ -14,7 +14,7 @@ import System.IO
 
 
 
-myTerminal = "urxvtcd"
+myTerminal = "konsole"
 myWorkspaces = ["1","2","3","4","5"]
 myLayoutHook = avoidStruts ( tiled ||| htiled ||| four ) ||| fullscreen
     where
@@ -39,7 +39,7 @@ myManageHook = composeAll
  
 -- Run XMonad
 main = do
-    xmproc <- spawnPipe "/usr/bin/tint2 -c /home/lb/.tint2rc"
+    xmproc <- spawnPipe "/usr/bin/tint2 -c /home/velene/.tint2rc"
     xmonad $ ewmh defaultConfig
         { terminal = myTerminal
         , manageHook = manageDocks <+> myManageHook <+> manageHook defaultConfig
